@@ -1,23 +1,25 @@
 let katzDeliLine = [];
+ 
+let  numCustomers = 0
 
-const takeANumber = (line, name) => {
-  let place = line.length + 1
-  place =  place.toString()
-  line.push(name)
+const takeANumber = (line) => {
+ 
+  numCustomers += 1
   
-  return `Welcome, ${name}. You are number ${place} in line.`
+  line.push(numCustomers)
+  return `Welcome, ${numCustomers}. Please, listen for ${numCustomers} to be called.`
 }
+
+// You are number 37.
 
 const nowServing = (katzDeliLine) => {
   if (katzDeliLine[0] === undefined){
     return 'There is nobody waiting to be served!'
   }
-  else {
-    let frontOfLine = katzDeliLine[0]
-    katzDeliLine.shift()
-    return `Currently serving ${frontOfLine}.`
-  }
-  
+
+  let frontOfLine = katzDeliLine[0]
+  katzDeliLine.shift()
+  return `Currently serving ${frontOfLine}.`
 }
 
 const currentLine = (katzDeliLine) => {
